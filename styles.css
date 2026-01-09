@@ -1,0 +1,454 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #141414;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #e8e8e8;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666;
+    --accent: #64ffda;
+    --accent-dim: #4fd1b0;
+    --border: #2a2a2a;
+    --code-bg: #1e1e1e;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --max-width: 720px;
+    --transition: 0.2s ease;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-dim);
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.logo-bracket {
+    color: var(--accent);
+    font-family: var(--font-mono);
+}
+
+.logo-text {
+    color: var(--text-primary);
+}
+
+.logo:hover .logo-text {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    padding: 64px 0 48px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* ===== Posts List ===== */
+.posts {
+    flex: 1;
+    padding: 24px 0;
+}
+
+.post-card {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    transition: all var(--transition);
+}
+
+.post-card:first-child {
+    padding-top: 0;
+}
+
+.post-card:last-child {
+    border-bottom: none;
+}
+
+.post-card:hover {
+    transform: translateX(4px);
+}
+
+.post-card a {
+    display: block;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.post-date {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.post-tag {
+    background: var(--bg-tertiary);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.post-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    transition: color var(--transition);
+}
+
+.post-card:hover .post-title {
+    color: var(--accent);
+}
+
+.post-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===== Single Post Page ===== */
+.post-header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+}
+
+.post-header h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.post-content {
+    padding-bottom: 64px;
+}
+
+.post-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 48px 0 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.post-content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.post-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: var(--accent);
+}
+
+.post-content p {
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+.post-content ul,
+.post-content ol {
+    margin: 0 0 20px 24px;
+    color: var(--text-secondary);
+}
+
+.post-content li {
+    margin-bottom: 8px;
+}
+
+.post-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.post-content em {
+    font-style: italic;
+}
+
+.post-content blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin: 24px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.post-content a {
+    border-bottom: 1px solid var(--accent);
+}
+
+.post-content a:hover {
+    background: rgba(100, 255, 218, 0.1);
+}
+
+/* ===== Code Blocks ===== */
+.post-content code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+.post-content :not(pre) > code {
+    background: var(--bg-tertiary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--accent);
+}
+
+.post-content pre {
+    background: var(--code-bg) !important;
+    border-radius: 8px;
+    padding: 20px 24px;
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+}
+
+.post-content pre code {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* Prism.js theme overrides */
+pre[class*="language-"] {
+    background: var(--code-bg) !important;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: var(--font-mono);
+    text-shadow: none;
+}
+
+/* ===== Images ===== */
+.post-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+}
+
+/* ===== Back Link ===== */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    transition: color var(--transition);
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.back-link::before {
+    content: '←';
+}
+
+/* ===== Footer ===== */
+footer {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ===== About Page ===== */
+.about-content {
+    padding: 48px 0;
+}
+
+.about-content h1 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.about-content p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* ===== Loading State ===== */
+.loading {
+    text-align: center;
+    padding: 48px 0;
+    color: var(--text-muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    header {
+        padding: 24px 0;
+    }
+    
+    .hero {
+        padding: 40px 0 32px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .post-title {
+        font-size: 1.15rem;
+    }
+    
+    .post-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .post-content pre {
+        padding: 16px;
+        margin-left: -16px;
+        margin-right: -16px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* ===== Selection ===== */
+::selection {
+    background: rgba(100, 255, 218, 0.2);
+    color: var(--text-primary);
+}

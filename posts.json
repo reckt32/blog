@@ -1,0 +1,14 @@
+[
+    {
+        "slug": "C-to-java",
+        "title": "Demystifying Java's OOP: A C Programmer's Perspective",
+        "date": "2026-01-10",
+        "tags": [
+            "java",
+            "oops",
+            "c",
+            "memory"
+        ],
+        "excerpt": "Coming from a C background, I always found Java's OOP concepts felt like a black box. Here's how the JVM actually implements objects, inheritance, polymorphism, and memory management under the hood."
+    }
+]
