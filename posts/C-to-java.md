@@ -29,7 +29,7 @@ In Java, the memory layout of a child class starts with the exact fields of the 
 
 ### 3. Polymorphism and Abstraction
 
-This was an interesting deep dive for me as I did not know how Polymorphism can work in C. Basically it is done using function pointers and manually handling them, but in JAVA it is automated, using a **vtable (Virtual Method Table)**.
+This was an interesting deep dive for me as I did not know how Polymorphism can work in C. You can check out [this blog](https://hackernoon.com/a-practical-guide-to-dynamic-polymorphism-in-c-programming) for a practical guide on it. Basically it is done using function pointers and manually handling them, but in JAVA it is automated, using a **vtable (Virtual Method Table)**.
 
 * Each Class has a vtable (an array of function pointers).
 * Every Object has a pointer in its header (the **Klass Pointer**) pointing to that vtable.
