@@ -1,5 +1,17 @@
 [
     {
+        "slug": "cgroups-and-containers",
+        "title": "How cgroups and Some Kernel Hacks Actually Made Containers",
+        "date": "2026-01-21",
+        "tags": [
+            "linux",
+            "containers",
+            "docker",
+            "kernel"
+        ],
+        "excerpt": "Container isn't even a thing in the Linux Kernel. It's just a bunch of clever tricks — cgroups, namespaces, and pivot_root — to make a process feel isolated."
+    },
+    {
         "slug": "C-to-java",
         "title": "Demystifying Java's OOP: A C Programmer's Perspective",
         "date": "2026-01-10",
