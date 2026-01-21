@@ -1,4 +1,4 @@
-If you have ever used docker you probably know containers are like lightweight virtual machines or whatever. You might even know they use namespaces and cgroups under the hood. But if you are coming from a C or systems background you realize pretty quickly that "Container" isn't even a thing in the Linux Kernel.
+If you have ever used docker you probably know containers are like lightweight virtual machines. You might even know they use namespaces and cgroups under the hood. But if you are coming from a C or systems background you realize pretty quickly that "Container" isn't even a thing in the Linux Kernel.
 
 Like there is no struct container in the source code. It is just a bunch of clever tricks to make a process feel isolated. It is basically chroot on steroids. Here is how it actually went down at the hard disk and kernel level.
 
