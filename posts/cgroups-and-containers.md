@@ -93,3 +93,4 @@ That is all a container is. A process that is lonely because of namespaces, on a
 
 Check out this video if you want to hear it from the devs themselves:
 - [Cgroups, Namespaces, and the Genesis of Containers](https://www.youtube.com/watch?v=sK5i-N34im8)
+- [Cgroup manual](https://man7.org/linux/man-pages/man7/cgroups.7.html)
